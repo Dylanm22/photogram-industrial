@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" >
   <div class="container">
     <%= link_to "Photogram", root_path, class: "navbar-brand" %>
     
@@ -33,7 +33,7 @@
       </li>
     
      <li class="nav-item">
-      <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
+      <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete } %>
       </li>
     
       <% else %>
