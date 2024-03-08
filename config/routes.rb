@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :comments
   resources :photos
   
-  get"/:username" => "users#show"
+  get"/:username" => "users#show",  as: :user
  
 end
