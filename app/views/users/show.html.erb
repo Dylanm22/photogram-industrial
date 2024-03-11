@@ -3,6 +3,8 @@
 
 <h1><%= @users.username %></h1>
 
+
+
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <%= link_to "Post", user_path(@users.username), class: "nav-link active" %>
@@ -13,12 +15,12 @@
   <li class="nav-item">
 <%= link_to "Feed", feed_path(@users.username), class: "nav-link" %>
   </li>
-  <!-- <li class="nav-item">
+   <li class="nav-item">
     <a class="nav-link" href="#">Followers</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Following</a>
-  </li>-->
+  </li>
 </ul>
 
 
@@ -32,7 +34,7 @@
 
 
 
-<% current_user.own_photos.each do |photo| %>
+<% @users.own_photos.each do |photo| %>
 <div class ="row">
 <div class="col-md-6 offset-md-3">
 

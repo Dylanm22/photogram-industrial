@@ -1,0 +1,10 @@
+<h1>followers</h1>
+<% current_user.accepted_received_follow_requests.each do |list| %>
+
+
+<ul>
+ <li> <%= link_to "#{list.sender.username}", user_path(list.sender.username) %></li>
+</ul>
+
+
+<%end %>
