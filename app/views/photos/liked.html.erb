@@ -1,1 +1,73 @@
-hi
+<div class="row">
+ <div class="col-md-6 offset-md-3">
+
+
+<%= current_user.liked_photos.count %>
+<h1><%= @user.username %></h1>
+
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <%= link_to "Post", user_path(@user.username), class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Likes", liked_path(@user.username), class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Feed</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="#">Followers</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Following</a>
+  </li>
+</ul>
+
+
+<h2>Liked photos</h2>
+
+</div>
+</div>
+
+
+
+
+
+
+<% current_user.liked_photos.each do |photo| %>
+<div class ="row">
+<div class="col-md-6 offset-md-3">
+
+<div class="card m-4" >
+   <%= image_tag photo.image, class: "card-img-top" %>
+
+  <div class="card-body">
+    <h4 class="card-title"><%= photo.owner.username %></h4>
+    <p class="card-text"><%= photo.caption %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+     <% photo.comments.each do |comment|%>
+   
+    <li class="list-group-item">
+    
+    <div class="media">
+  
+    <div class = "media-body">
+    <img src="." class ="mr-3" alt="..">
+    <h6 class="mt-0"><%= comment.author.username %></h6>
+    <p>
+    <%=  comment.body %>
+    </p>
+    </li>
+     <% end%>
+    
+  </ul>
+  <div class="card-body">
+    <%= render "comments/form", comment: Comment.new(photo_id: photo.id) %>
+  </div>
+</div>
+
+</div>
+</div>
+
+<%end %>
