@@ -16,10 +16,10 @@
 <%= link_to "Feed", feed_path(@users.username), class: "nav-link" %>
   </li>
    <li class="nav-item">
-    <a class="nav-link" href="#">Followers</a>
+<%= link_to "followers", followers_path(@users.username), class: "nav-link" %>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Following</a>
+    <%= link_to "following", following_path(@users.username), class: "nav-link" %>
   </li>
 </ul>
 
