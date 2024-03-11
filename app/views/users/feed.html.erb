@@ -14,14 +14,13 @@
     <%= link_to "Feed", feed_path(@user.username), class: "nav-link active" %>
   </li>
   </li>
-   <!--<li class="nav-item">
-    <a class="nav-link" href="#">Followers</a>
+     <li class="nav-item">
+<%= link_to "followers", followers_path(@user.username), class: "nav-link" %>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Following</a>
-  </li>-->
+    <%= link_to "following", following_path(@user.username), class: "nav-link" %>
+  </li>
 </ul>
-
 
 <div>
 </div>
@@ -30,11 +29,6 @@
 
 </div>
 </div>
-
-
-
-
-
 
 <% @user.feed.each do |photo| %>
 <div class ="row">
