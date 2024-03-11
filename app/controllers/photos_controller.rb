@@ -67,4 +67,8 @@ class PhotosController < ApplicationController
     def photo_params
       params.require(:photo).permit(:image, :comments_count, :likes_count, :caption, :owner_id)
     end
-end
+   def liked
+    @user = User.find_by!(username: params.fetch(:username))
+   end
+
+ end
