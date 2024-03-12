@@ -6,6 +6,9 @@
      
      <%if user_signed_in?%>
       <%= link_to "Feed", feed_path(current_user.username), class: "nav-link text-muted" %>
+      <%= link_to "Discover", discover_path(current_user.username), class: "nav-link text-muted" %>
+   
+   
     <% end %>
     </div>
 
