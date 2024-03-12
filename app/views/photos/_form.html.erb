@@ -1,3 +1,6 @@
+<div class="row">
+ <div class="col-md-6 offset-md-5">
+
 <%= form_with(model: photo) do |form| %>
   <% if photo.errors.any? %>
     <div style="color: red">
@@ -17,13 +20,13 @@
   </div>
 
   <div>
-    <%= form.label :comments_count, style: "display: block" %>
-    <%= form.number_field :comments_count %>
+    <%#= form.label :comments_count, style: "display: block" %>
+    <%#= form.number_field :comments_count %>
   </div>
 
   <div>
-    <%= form.label :likes_count, style: "display: block" %>
-    <%= form.number_field :likes_count %>
+    <%#= form.label :likes_count, style: "display: block" %>
+    <%#= form.number_field :likes_count %>
   </div>
 
   <div>
@@ -40,3 +43,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+</div>
+
+</div>
